@@ -1,0 +1,19 @@
+body {
+    background-color: darkgreen;
+    display: block;
+    text-align: center;
+}
+
+h1 {
+    font-size: 100;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: goldenrod;
+}
+
+p {
+    font-family: sans-serif;
+    color: white;
+    font-size: 25;
+    font-weight: bold;
+    margin: 5%;
+}
