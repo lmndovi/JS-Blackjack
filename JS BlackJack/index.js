@@ -5,14 +5,14 @@
 
 
 
-// function numBetweenMinMax(min, max) { // min and max included 
-//     return Math.floor(Math.random() * (max - min + 1) + min)
-// };
+function numBetweenMinMax(min, max) { // min and max included 
+    return Math.floor(Math.random() * (max - min + 1) + min)
+};
 
-// let firstCard = numBetweenMinMax(2, 11);
-// let secondCard = numBetweenMinMax(2, 11);
-let firstCard = 10
-let secondCard = 3
+let firstCard = numBetweenMinMax(2, 11);
+let secondCard = numBetweenMinMax(2, 11);
+// let firstCard = 10
+// let secondCard = 3
 let sum = firstCard + secondCard
 let hasBlackJack = false
 let isAlive = true
