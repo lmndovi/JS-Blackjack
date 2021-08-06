@@ -31,8 +31,8 @@ function numBetweenMinMax(min, max) { // min and max included
     return Math.floor(Math.random() * (max - min + 1) + min)
 };
 
-let firstCard = numBetweenMinMax(2, 11);
-let secondCard = numBetweenMinMax(2, 11);
+let firstCard = numBetweenMinMax(1, 11);
+let secondCard = numBetweenMinMax(1, 11);
 let sum = firstCard + secondCard
 let hasBlackJack = false
 let isAlive = true
@@ -62,7 +62,7 @@ function startGame () {
 
 function newCard() {
     // let card = 8
-    let card = numBetweenMinMax(2, 11);
+    let card = numBetweenMinMax(1, 11);
     sum += card
     renderGame()    
     cardsEl.textContent += (", " + card)
@@ -78,3 +78,32 @@ function newCard() {
 // img.src = 'images/2_hearts.png';
 // // document.getElementById('message-el').appendChild(img);
 
+
+// Created two card objects to pull the card value + image from
+let firstCardArray = [
+    {card: 1, image: "images/Ace_spades.png"},
+    {card: 2, image: "images/2_hearts.png"},
+    {card: 3, image: "images/3_clubs.png"},
+    {card: 4, image: "images/4_hearts.png"},
+    {card: 5, image: "images/5_spades.png"},
+    {card: 6, image: "images/6_diamonds.png"},
+    {card: 7, image: "images/7_clubs.png"},
+    {card: 8, image: "images/8_spades.png"},
+    {card: 9, image: "images/9_diamonds.png"},
+    {card: 10, image: ["images/10_hearts.png", "images/Jack_clubs.png", "images/King_hearts.png", "images/Queen_diamonds.png"]},
+    {card: 11, image: "images/2_hearts.png"},
+]
+
+let secondCardArray = [
+    {card: 1, image: "images/Ace_spades.png"},
+    {card: 2, image: "images/2_hearts.png"},
+    {card: 3, image: "images/3_clubs.png"},
+    {card: 4, image: "images/4_hearts.png"},
+    {card: 5, image: "images/5_spades.png"},
+    {card: 6, image: "images/6_diamonds.png"},
+    {card: 7, image: "images/7_clubs.png"},
+    {card: 8, image: "images/8_spades.png"},
+    {card: 9, image: "images/9_diamonds.png"},
+    {card: 10, image: ["images/10_hearts.png", "images/Jack_clubs.png", "images/King_hearts.png", "images/Queen_diamonds.png"]},
+    {card: 11, image: "images/2_hearts.png"},
+]
