@@ -1,16 +1,15 @@
 <html>
-
-<head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
-    <link rel="stylesheet" href="index.css">
-    <script src="index.js"></script>
-</head>
-
-<body>
-    <h1>Blackjack</h1>
-    <p id="message-el">Let's play a round...</p>
-    <p id="cards-el">Cards:</p>
-    <p id="sum-el">Sum:</p>
-</body>
-
+    <head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <h1>Blackjack</h1>
+        <p id="message-el">Want to play a round?</p>
+        <p id="cards-el">Cards:</p>
+        <!-- 1. Give the sum paragraph and id of sum-el -->
+        <p id="sum-el">Sum:</p>
+        <button id="start-btn" class="btn" onclick="startGame()">START GAME</button>
+        <button id="new-card-btn" class="btn" onclick="newCard()">NEW CARD</button>
+        <script src="index.js"></script>
+    </body>
 </html>
