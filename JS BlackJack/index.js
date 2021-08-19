@@ -175,13 +175,14 @@ function startGame () {
 
 function newCard() {
     // let card = 8
+    renderGame();
     let newCardNum = numBetweenMinMax(1, 11);
     const imageNew = document.createElement("img");
     imageNew.src = imgArray[newCardNum].src;
     imageNew.height = 90;
     cardsEl.appendChild(imageNew);
     sum += newCardNum;
-    renderGame();    
+    // renderGame();    
     // cardsEl.appendChild(card);
     // When 4th card is drawn, 3rd card is deleted from cardsEl.textContent
 }
