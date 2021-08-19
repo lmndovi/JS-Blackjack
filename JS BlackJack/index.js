@@ -2,31 +2,34 @@
 let imgArray = new Array();
 
 imgArray[0] = new Image();
-imgArray[0].src = 'images/2_hearts.png';
+imgArray[0].src = '';
 imgArray[1] = new Image();
-imgArray[1].src = 'images/3_clubs.png';
+imgArray[1].src = 'images/Ace_spades.png';
 imgArray[2] = new Image();
-imgArray[2].src = 'images/4_hearts.png';
+imgArray[2].src = 'images/2_hearts.png';
 imgArray[3] = new Image();
-imgArray[3].src = 'images/5_spades.png';
+imgArray[3].src = 'images/3_clubs.png';
 imgArray[4] = new Image();
-imgArray[4].src = 'images/6_diamonds.png';
+imgArray[4].src = 'images/4_hearts.png';
 imgArray[5] = new Image();
-imgArray[5].src = 'images/7_clubs.png';
+imgArray[5].src = 'images/5_spades.png';
 imgArray[6] = new Image();
-imgArray[6].src = 'images/8_spades.png';
+imgArray[6].src = 'images/6_diamonds.png';
 imgArray[7] = new Image();
-imgArray[7].src = 'images/9_diamonds.png';
+imgArray[7].src = 'images/7_clubs.png';
 imgArray[8] = new Image();
-imgArray[8].src = 'images/10_hearts.png';
+imgArray[8].src = 'images/8_spades.png';
 imgArray[9] = new Image();
-imgArray[9].src = 'images/Ace_spades.png';
+imgArray[9].src = 'images/9_diamonds.png';
 imgArray[10] = new Image();
-imgArray[10].src = 'images/Jack_clubs.png';
+imgArray[10].src = 'images/10_hearts.png';
 imgArray[11] = new Image();
-imgArray[11].src = 'images/King_hearts.png';
+imgArray[11].src = 'images/Jack_clubs.png';
 imgArray[12] = new Image();
-imgArray[12].src = 'images/Queen_diamonds.png';
+imgArray[12].src = 'images/King_hearts.png';
+imgArray[13] = new Image();
+imgArray[13].src = 'images/Queen_diamonds.png';
+
 console.log(imgArray)
 
 // Create array with images hosted on google drive
@@ -117,36 +120,42 @@ function show_image(src, width, height, alt) {
 }
 
 
-function selectCard(cardNum, card) {
-    if(cardNum === 1) {
-        card = show_image(imgArray[9], 100, 200, cardNum);
-    } else if(cardNum === 2) {
-        card = show_image(imgArray[0], 100, 200, cardNum);
-    } else if(cardNum === 3) {
-        card = show_image(imgArray[1], 100, 200, cardNum);
-    } else if(cardNum === 4) {
-        card = show_image(imgArray[2], 100, 200, cardNum);
-    } else if(cardNum === 5) {
-        card = show_image(imgArray[3], 100, 200, cardNum);
-    } else if(cardNum === 6) {
-        card = show_image(imgArray[4], 100, 200, cardNum);
-    } else if(cardNum === 7) {
-        card = show_image(imgArray[5], 100, 200, cardNum);
-    } else if(cardNum === 8) {
-        card = show_image(imgArray[6], 100, 200, cardNum);
-    } else if(cardNum === 9) {
-        card = show_image(imgArray[7], 100, 200, cardNum);
-    } else if(cardNum === 10) {
-        card = show_image(imgArray[11], 100, 200, cardNum);
-    } else if(cardNum === 11) {
-        card = show_image(imgArray[9], 100, 200, cardNum);
-    } 
-}
+// function selectCard(cardNum, card) {
+//     if(cardNum === 1) {
+//         card = show_image(imgArray[9], 100, 200, cardNum);
+//     } else if(cardNum === 2) {
+//         card = show_image(imgArray[0], 100, 200, cardNum);
+//     } else if(cardNum === 3) {
+//         card = show_image(imgArray[1], 100, 200, cardNum);
+//     } else if(cardNum === 4) {
+//         card = show_image(imgArray[2], 100, 200, cardNum);
+//     } else if(cardNum === 5) {
+//         card = show_image(imgArray[3], 100, 200, cardNum);
+//     } else if(cardNum === 6) {
+//         card = show_image(imgArray[4], 100, 200, cardNum);
+//     } else if(cardNum === 7) {
+//         card = show_image(imgArray[5], 100, 200, cardNum);
+//     } else if(cardNum === 8) {
+//         card = show_image(imgArray[6], 100, 200, cardNum);
+//     } else if(cardNum === 9) {
+//         card = show_image(imgArray[7], 100, 200, cardNum);
+//     } else if(cardNum === 10) {
+//         card = show_image(imgArray[11], 100, 200, cardNum);
+//     } else if(cardNum === 11) {
+//         card = show_image(imgArray[9], 100, 200, cardNum);
+//     } 
+// }
 
 function renderGame() {
-    selectCard(firstCardNum, firstCard);
-    selectCard(secondCardNum, secondCard);
-    cardsEl.textContent = "Cards: " + firstCard + ", " + secondCard;
+    const image1 = document.createElement("img");
+    image1.src = imgArray[firstCardNum].src;
+    image1.height = 90;
+    cardsEl.appendChild(image1);
+    const image2 = document.createElement("img");
+    image2.src = imgArray[secondCardNum].src;
+    image2.height = 90;
+    cardsEl.appendChild(image2);
+
     sumEl.textContent = "Sum: " + sum;
     if (sum <= 20) {
         message = "Do you want to draw a new card?"
@@ -166,10 +175,14 @@ function startGame () {
 
 function newCard() {
     // let card = 8
-    let card = numBetweenMinMax(1, 11);
-    sum += card
-    renderGame()    
-    cardsEl.textContent += (", " + card)
+    let newCardNum = numBetweenMinMax(1, 11);
+    const imageNew = document.createElement("img");
+    imageNew.src = imgArray[newCardNum].src;
+    imageNew.height = 90;
+    cardsEl.appendChild(imageNew);
+    sum += newCardNum;
+    renderGame();    
+    // cardsEl.appendChild(card);
     // When 4th card is drawn, 3rd card is deleted from cardsEl.textContent
 }
 
