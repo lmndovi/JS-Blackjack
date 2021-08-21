@@ -33,7 +33,11 @@ p {
     border: none;
     display: block;
     margin: auto;
-    margin-bottom: 1%;
+    margin-bottom: 2%;
+}
+
+.cards {
+    padding: 100;
 }
 
 /* #new-card-btn {
