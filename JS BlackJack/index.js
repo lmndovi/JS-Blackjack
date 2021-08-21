@@ -1,3 +1,6 @@
+let suits = ["spades", "diamonds", "clubs", "hearts"];
+
+
 // Created one array for the card images
 let imgArray = new Array();
 
@@ -38,16 +41,16 @@ function numBetweenMinMax(min, max) { // min and max included
 };
 
 let sum = 0;
-console.log(sum)
+console.log(sum);
 let firstCard = "";
 // console.log(firstCard)
 let secondCard = "";
-let hasBlackJack = false
-let isAlive = true
-let message = ""
-let messageEl = document.getElementById("message-el")
-let sumEl = document.getElementById("sum-el")
-let cardsEl = document.getElementById("cards-el")
+let hasBlackJack = false;
+let isAlive = true;
+let message = "";
+let messageEl = document.getElementById("message-el");
+let sumEl = document.getElementById("sum-el");
+let cardsEl = document.getElementById("cards-el");
 
 function startGame () {
     drawOneCard();
@@ -82,4 +85,8 @@ function updateInstructions () {
         isAlive = false
     }
     messageEl.textContent = message;
+}
+
+function newGame() {
+    location.reload();
 }
