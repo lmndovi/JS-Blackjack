@@ -1,5 +1,8 @@
-let suits = ["spades", "diamonds", "clubs", "hearts"];
+// let suits = ["spades", "diamonds", "clubs", "hearts"];
 
+// Assign the 10, King, Queen and Jack all to the value of 10
+let imgCard10 = ['images/10_hearts.png', 'images/Jack_clubs.png', 'images/King_hearts.png', 'images/Queen_diamonds.png'];
+let i = numBetweenMinMax(0, 3);
 
 // Created one array for the card images
 let imgArray = new Array();
@@ -25,13 +28,10 @@ imgArray[8].src = 'images/8_spades.png';
 imgArray[9] = new Image();
 imgArray[9].src = 'images/9_diamonds.png';
 imgArray[10] = new Image();
-imgArray[10].src = 'images/10_hearts.png';
+imgArray[10].src = imgCard10[i];
 imgArray[11] = new Image();
-imgArray[11].src = 'images/Jack_clubs.png';
-imgArray[12] = new Image();
-imgArray[12].src = 'images/King_hearts.png';
-imgArray[13] = new Image();
-imgArray[13].src = 'images/Queen_diamonds.png';
+imgArray[11].src = 'images/Ace_spades.png';
+
 
 console.log(imgArray)
 
