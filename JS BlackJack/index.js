@@ -59,8 +59,10 @@ function startGame () {
 }
 
 function newCard() {
+    if (isAlive === true && hasBlackJack === false && sum > 0) {
     drawOneCard();
     updateInstructions();
+    }
 }
 
 function drawOneCard() {
